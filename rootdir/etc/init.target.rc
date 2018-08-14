@@ -275,7 +275,6 @@ service gx_fpd /system/bin/gx_fpd
     class late_start
     user root
     group root system
-    seclabel u:r:goodix:s0
 
 on charger
     setprop persist.sys.usb.config mass_storage
@@ -293,7 +292,6 @@ service hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
-    seclabel u:r:hvdcp:s0
 
 service per_mgr /system/vendor/bin/pm-service
     class core

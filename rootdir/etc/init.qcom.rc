@@ -514,7 +514,6 @@ service loc_launcher /vendor/bin/loc_launcher
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
-    seclabel u:r:qti_init_shell:s0
     oneshot
 
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
@@ -551,7 +550,6 @@ service ril-daemon2 /vendor/bin/hw/rild -c 2
 service charger /charger
     class charger
     group system graphics
-    seclabel u:r:healthd:s0
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
