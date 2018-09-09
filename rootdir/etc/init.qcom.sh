@@ -522,3 +522,9 @@ if [ -f /data/system/users/0/settings_global.xml ]; then
     sed -i 's/"multi_sim_data_call" value="1"/"multi_sim_data_call" value="-1"/g' /data/system/users/0/settings_global.xml
     restorecon /data/system/users/0/settings_global.xml
 fi
+
+# Temp hax to fix FP data reset
+mv /data/system/users/0/fpdata/fpdb /data/system/users/fpdb
+rm -rf /data/system/users/0/fpdata
+mkdir /data/system/users/0/fpdata
+mv /data/system/users/fpdb /data/system/users/0/fpdata/fpdb
